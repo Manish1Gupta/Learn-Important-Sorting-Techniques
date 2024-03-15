@@ -1,0 +1,52 @@
+//Selection Sort Algorithm
+
+👉👨👮🏽‍♀️Selection Sort
+
+👉👉👉The Selection Sort algorithm finds the lowest value in an array and moves it to the front of the array.
+
+........................................................................................
+Problem Statement: Given an array of N integers, write a program to implement the Selection sorting algorithm.
+
+Example 1:
+Input: N = 6, array[] = {13,46,24,52,20,9}
+Output: 9,13,20,24,46,52
+Explanation: After sorting the array is: 9, 13, 20, 24, 46, 52
+
+Example 2:
+Input: N=5, array[] = {5,4,3,2,1}
+Output: 1,2,3,4,5
+Explanation: After sorting the array is: 1, 2, 3, 4, 5
+
+👉👉👉👉👉👉👉👉👉👉👉
+Approach:
+Selection Sort Implementation
+To implement the Selection Sort algorithm in a programming language, we need:
+
+An array with values to sort.
+An inner loop that goes through the array, finds the lowest value, and moves it to the front of the array. This loop must loop through one less value each time it runs.
+An outer loop that controls how many times the inner loop must run. For an array with 
+n
+ values, this outer loop must run 
+n-1 times.
+
+
+
+.........................
+..........................
+..........................
+CODE :-
+void selectionSort(vector<int>& arr) {
+    int n = arr.size(); // Get the size of the array
+    for (int i = 0; i < n - 1; i++) { // Loop through the array
+        int minIndex = i; // Assume the current index has the minimum value
+        for (int j = i + 1; j < n; j++) { // Loop through the remaining elements
+            if (arr[j] < arr[minIndex]) { // If we find a smaller element
+                minIndex = j; // Update the index of the minimum element
+            }
+        }
+        // Swap the current element with the minimum element
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
